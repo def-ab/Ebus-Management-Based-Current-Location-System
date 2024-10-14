@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>User Dashboard</h1>
+  <div class="container">
+    <h2>Search Bus Location</h2>
+    <form id="search-bus-form">
+      <label for="source">Source:</label>
+      <input type="text" id="source" required>
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" required>
+      <button type="submit">Search</button>
+    </form>
+    <div id="bus-info"></div>
+  </div>
+  <script src="user.js"></script>
+</body>
+</html>

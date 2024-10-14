@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebus Management System - User Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyCXU5HMQ4Q3_knxDGWpWMf0vm8nMgRSKCo",
+        authDomain: "ebus-managemen-locationtracker.firebaseapp.com",
+        databaseURL: "https://ebus-managemen-locationtracker-default-rtdb.firebaseio.com",
+        projectId: "ebus-managemen-locationtracker",
+        storageBucket: "ebus-managemen-locationtracker.appspot.com",
+        messagingSenderId: "144659079427",
+        appId: "1:144659079427:web:14a79f7a0e5d1b28888936",
+        measurementId: "G-3QWRCZVHCW"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const analytics = getAnalytics(app)
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Ebus Management System</h1>
+        <div id="userForm">
+            <h2>User Registration</h2>
+            <form id="registerForm">
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <div id="loginForm">
+            <h2>User Login</h2>
+            <form id="loginUser">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="busSearch">
+            <h2>Search Bus Location</h2>
+            <input type="text" id="source" placeholder="Source" required>
+            <input type="text" id="destination" placeholder="Destination" required>
+            <button id="searchBus">Search</button>
+        </div>
+
+        <div id="busResults">
+            <h2>Bus Information</h2>
+            <ul id="busList"></ul>
+        </div>
+    </div>
+
+    <script src="user.js"></script>
+</body>
+</html>
